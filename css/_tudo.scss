@@ -1,0 +1,56 @@
+* {
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg-gradient);
+}
+
+.carta {
+  transform: translateY(20px);
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+
+  
+  height: 500px;
+  min-width: 320px;
+  max-width: 920px;
+  margin: 0 20px 0 20px;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% 75%;
+  grid-template-areas: "image" "text";
+  align-items: center;
+  justify-items: center;
+}
+
+.cartaImagem {
+  position: absolute;
+  grid-area: image;
+  height: 100%;
+  width: 200px;
+  background: url("../images/bg-pattern-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  img {
+    position: absolute;
+    inset: -120px 0 0 -20px;
+    margin: auto;
+    height: 165px;
+    width: 220px;
+  }
+}
+.cartaAcordeao {
+  grid-area: text;
+}
