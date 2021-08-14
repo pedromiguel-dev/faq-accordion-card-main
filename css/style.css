@@ -5,14 +5,18 @@
 
 * {
   font-size: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 body {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   min-height: 100vh;
   width: 100vw;
@@ -20,7 +24,8 @@ body {
 }
 
 .carta {
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
   position: relative;
   background: white;
   border-radius: 15px;
@@ -29,16 +34,23 @@ body {
   max-height: fit-content;
   max-width: 980px;
   margin: 20px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100px 75%;
-  grid-template-areas: "image" "text";
-  align-items: center;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 100px 75%;
+      grid-template-rows: 100px 75%;
+      grid-template-areas: "image" "text";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 
 .cartaImagem {
   position: absolute;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: image;
   height: 100%;
   width: 200px;
@@ -46,6 +58,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .cartaImagem .mulher1 {
   position: absolute;
   inset: -120px 0 0 -20px;
@@ -53,11 +66,18 @@ body {
   height: 165px;
   width: 220px;
 }
+
 .cartaImagem .mulher2 {
   display: none;
 }
 
+.cartaImagem .cubo1 {
+  display: none;
+}
+
 .cartaAcordeao {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: text;
   text-align: center;
   margin: 0px 20px 20px 20px;
@@ -89,8 +109,10 @@ body {
   position: relative;
   margin: 7px 0 7px 0;
 }
+
 .collaps .acordeoes .collaps-header::after {
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   content: "";
   position: absolute;
   background-image: url("../images/icon-arrow-down.svg");
@@ -99,9 +121,12 @@ body {
   width: 15px;
   height: 10px;
   right: 0;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 .collaps .acordeoes .collaps-header:hover {
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #f47c57;
 }
@@ -114,6 +139,7 @@ body {
   overflow: hidden;
   overflow-y: auto;
   height: 0;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -121,41 +147,46 @@ body {
   padding: 0;
   height: 50px;
   overflow-y: hidden;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .collaps .acordeoes.active .collaps-header {
   font-weight: 700;
   color: black;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
 .collaps .acordeoes.active .collaps-header::after {
-  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
 @media (min-width: 620px) {
   .carta {
-    transform: translateY(20px);
-    position: relative;
-    max-height: -webkit-fit-content;
-    max-height: -moz-fit-content;
-    max-height: fit-content;
-    max-width: 980px;
-    margin: 20px;
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: -webkit-max-content;
-    grid-template-rows: max-content;
-    grid-template-areas: "image text";
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: max-content;
+        grid-template-rows: -webkit-max-content;
+        grid-template-rows: max-content;
+        grid-template-areas: "image text";
   }
   .carta .cartaAcordeao {
     position: relative;
     text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin: 40px 54px 40px 0;
   }
   .carta .cartaAcordeao .titulo {
@@ -168,32 +199,40 @@ body {
   .carta .cartaAcordeao .collaps .acordeoes {
     padding: 8px 0;
   }
-
   .cartaImagem {
     position: absolute;
-    grid-area: image;
     height: 100%;
     width: 100%;
     background: url("../images/bg-pattern-desktop.svg");
     background-size: 170%;
     background-repeat: no-repeat;
     background-position: 120% 60%;
+  }
+  .cartaImagem .ims {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    position: absolute;
   }
   .cartaImagem .mulher1 {
     display: none;
-    position: absolute;
-    inset: -120px 0 0 -20px;
-    margin: auto;
-    height: 165px;
-    width: 220px;
   }
   .cartaImagem .mulher2 {
     display: inline;
     position: absolute;
     top: 50%;
-    transform: translate(-15%, -50%);
+    -webkit-transform: translate(-15%, -50%);
+            transform: translate(-15%, -50%);
     height: auto;
     width: 100%;
+    overflow: hidden;
   }
-}/*# sourceMappingURL=style.css.map */
+  .cartaImagem .cubo1 {
+    position: absolute;
+    display: block;
+    top: 50%;
+    -webkit-transform: translate(-52%, -30%);
+            transform: translate(-52%, -30%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
