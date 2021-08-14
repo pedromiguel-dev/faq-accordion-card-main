@@ -27,7 +27,7 @@ body {
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
-  max-width: 920px;
+  max-width: 980px;
   margin: 20px;
   display: grid;
   grid-template-columns: 100%;
@@ -46,17 +46,21 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.cartaImagem img {
+.cartaImagem .mulher1 {
   position: absolute;
   inset: -120px 0 0 -20px;
   margin: auto;
   height: 165px;
   width: 220px;
 }
+.cartaImagem .mulher2 {
+  display: none;
+}
 
 .cartaAcordeao {
   grid-area: text;
   text-align: center;
+  margin: 0px 20px 20px 20px;
 }
 
 .titulo {
@@ -70,7 +74,6 @@ body {
 .collaps {
   width: 100%;
   text-align: left;
-  padding: 0 20px 20px 20px;
 }
 
 .collaps .acordeoes {
@@ -130,4 +133,67 @@ body {
 .collaps .acordeoes.active .collaps-header::after {
   transform: rotate(-180deg);
   transition: 0.2s ease-in-out;
+}
+
+@media (min-width: 620px) {
+  .carta {
+    transform: translateY(20px);
+    position: relative;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    max-width: 980px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: -webkit-max-content;
+    grid-template-rows: max-content;
+    grid-template-areas: "image text";
+  }
+  .carta .cartaAcordeao {
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 40px 54px 40px 0;
+  }
+  .carta .cartaAcordeao .titulo {
+    margin: 0;
+    font-size: 2em;
+  }
+  .carta .cartaAcordeao .collaps {
+    padding: 0px;
+  }
+  .carta .cartaAcordeao .collaps .acordeoes {
+    padding: 8px 0;
+  }
+
+  .cartaImagem {
+    position: absolute;
+    grid-area: image;
+    height: 100%;
+    width: 100%;
+    background: url("../images/bg-pattern-desktop.svg");
+    background-size: 170%;
+    background-repeat: no-repeat;
+    background-position: 120% 60%;
+    overflow: hidden;
+  }
+  .cartaImagem .mulher1 {
+    display: none;
+    position: absolute;
+    inset: -120px 0 0 -20px;
+    margin: auto;
+    height: 165px;
+    width: 220px;
+  }
+  .cartaImagem .mulher2 {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    transform: translate(-15%, -50%);
+    height: auto;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

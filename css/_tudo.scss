@@ -20,7 +20,7 @@ body {
   border-radius: 15px;
 
   max-height: fit-content;
-  max-width: 920px;
+  max-width: 980px;
   margin: 20px;
 
   display: grid;
@@ -40,47 +40,50 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 
-  img {
+  .mulher1 {
     position: absolute;
     inset: -120px 0 0 -20px;
     margin: auto;
     height: 165px;
     width: 220px;
   }
+  .mulher2 {
+    display: none;
+  }
 }
 
 .cartaAcordeao {
   grid-area: text;
   text-align: center;
+  margin: 0px 20px 20px 20px;
 }
 
-.titulo{
+.titulo {
   color: hsl(238, 29%, 16%);
   font-size: 1.8em;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-weight: 700;
   margin: 5px 0 20px 0;
 }
 
 ////Acordeon
 
-.collaps{
+.collaps {
   width: 100%;
   text-align: left;
-  padding: 0 20px 20px 20px;
 }
-.collaps .acordeoes{
+.collaps .acordeoes {
   padding: 10px 0 10px 0;
   border-bottom: hsl(240, 5%, 91%) solid 1px;
   position: relative;
 }
-.collaps .acordeoes .collaps-header{
-  font-family: 'Kumbh Sans', sans-serif;
+.collaps .acordeoes .collaps-header {
+  font-family: "Kumbh Sans", sans-serif;
   font-size: 12px;
   color: hsl(237, 12%, 33%);
   position: relative;
   margin: 7px 0 7px 0;
-  &::after{
+  &::after {
     transform: scale(0.7);
     content: "";
     position: absolute;
@@ -92,14 +95,14 @@ body {
     right: 0;
     transition: 0.2s;
   }
-  &:hover{
+  &:hover {
     transition: all 0.2s ease-in-out;
-    color:  hsl(14, 88%, 65%);
+    color: hsl(14, 88%, 65%);
   }
 }
 
-.collaps .acordeoes .collaps-body{
-  font-family: 'Kumbh Sans', sans-serif;
+.collaps .acordeoes .collaps-body {
+  font-family: "Kumbh Sans", sans-serif;
   font-size: 10px;
   color: hsl(240, 6%, 50%);
   position: relative;
@@ -109,20 +112,83 @@ body {
   transition: 0.5s;
 }
 
-.collaps .acordeoes.active .collaps-body{
+.collaps .acordeoes.active .collaps-body {
   padding: 0;
   height: 50px;
   overflow-y: hidden;
   transition: 0.5s;
 }
-.collaps .acordeoes.active .collaps-header{
+.collaps .acordeoes.active .collaps-header {
   font-weight: 700;
   color: black;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.collaps .acordeoes.active .collaps-header::after{
+.collaps .acordeoes.active .collaps-header::after {
   transform: rotate(-180deg);
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+@media (min-width: 620px) {
+  .carta {
+    transform: translateY(20px);
+    position: relative;
+    max-height: fit-content;
+    max-width: 980px;
+    margin: 20px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content;
+    grid-template-areas: "image text";
+
+    .cartaAcordeao {
+      position: relative;
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 40px 54px 40px 0;
+      .titulo {
+        margin: 0;
+        font-size: 2em;
+      }
+      .collaps {
+        padding: 0px;
+        .acordeoes {
+          padding: 8px 0;
+        }
+      }
+    }
+  }
+
+  .cartaImagem {
+    position: absolute;
+    grid-area: image;
+    height: 100%;
+    width: 100%;
+    background: url("../images/bg-pattern-desktop.svg");
+    background-size: 170%;
+    background-repeat: no-repeat;
+    background-position: 120% 60%;
+    overflow: hidden;
+
+    .mulher1 {
+      display: none;
+      position: absolute;
+      inset: -120px 0 0 -20px;
+      margin: auto;
+      height: 165px;
+      width: 220px;
+    }
+    .mulher2 {
+      display: inline;
+      position: absolute;
+      top: 50%;
+      transform: translate(-15%, -50%);
+      height: auto;
+      width: 100%;
+    }
+  }
 }
 ///
